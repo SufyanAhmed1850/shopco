@@ -75,3 +75,43 @@ input[type="range"].price-range::-moz-range-thumb {
   cursor: pointer;
   border: none;
 }
+
+/* ---- React <ViewTransition> animations ----
+   Page swap: outgoing page fades away, incoming page fades + rises in.
+   Shared product images (product-image-*) morph via the UA group animation. */
+::view-transition-old(page),
+::view-transition-new(page) {
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+::view-transition-old(page) {
+  animation-name: vt-page-out;
+}
+::view-transition-new(page) {
+  animation-name: vt-page-in;
+}
+@keyframes vt-page-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.995);
+  }
+}
+@keyframes vt-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+::view-transition-group(*) {
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Instant swaps for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

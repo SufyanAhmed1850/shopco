@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, ViewTransition } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Check, SlidersHorizontal } from "lucide-react";
 import { productById, youMayAlsoLike } from "../data/products";
@@ -79,16 +79,19 @@ export function ProductDetailPage() {
       </div>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-2">
-        {/* Gallery */}
+        {/* Gallery — the main image shares its view-transition name with the
+            product card image, so it morphs from the card on navigation. */}
         <div>
-          <div className="overflow-hidden rounded-[20px] bg-[#f0eeed]">
-            <img
-              key={activeImage}
-              src={gallery[activeImage]}
-              alt={product.name}
-              className="aspect-[444/530] w-full object-cover"
-            />
-          </div>
+          <ViewTransition name={`product-image-${product.id}`}>
+            <div className="overflow-hidden rounded-[20px] bg-[#f0eeed]">
+              <img
+                key={activeImage}
+                src={gallery[activeImage]}
+                alt={product.name}
+                className="aspect-[444/530] w-full object-cover"
+              />
+            </div>
+          </ViewTransition>
           <div className="mt-3.5 grid grid-cols-3 gap-3.5">
             {gallery.slice(1).map((src, i) => (
               <button
