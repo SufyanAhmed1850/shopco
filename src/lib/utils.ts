@@ -10,3 +10,9 @@ export function cn(...inputs: ClassValue[]) {
 export function formatPrice(value: number): string {
   return `$${value}`;
 }
+
+/** Prefix a public asset path with the Vite base URL so the app works under a subpath. */
+export function asset(path: string): string {
+  const base = import.meta.env.BASE_URL || "/";
+  return `${base}${path.replace(/^\/+/, "")}`;
+}

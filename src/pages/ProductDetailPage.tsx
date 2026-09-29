@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { Check, SlidersHorizontal } from "lucide-react";
 import { productById, youMayAlsoLike } from "../data/products";
 import { productReviews } from "../data/content";
+import { asset } from "../lib/utils";
 import { Breadcrumbs } from "../components/layout/Breadcrumbs";
 import { ProductCard } from "../components/product/ProductCard";
 import { QuantityStepper } from "../components/product/QuantityStepper";
@@ -19,10 +20,10 @@ const tabs = ["Product Details", "Rating & Reviews", "FAQs"] as const;
 function galleryFor(productId: string, main: string): string[] {
   if (productId === "one-life-graphic-t-shirt") {
     return [
-      "/assets/products/one-life-main.png",
-      "/assets/products/one-life-t1.png",
-      "/assets/products/one-life-t2.png",
-      "/assets/products/one-life-t3.png",
+      asset("assets/products/one-life-main.png"),
+      asset("assets/products/one-life-t1.png"),
+      asset("assets/products/one-life-t2.png"),
+      asset("assets/products/one-life-t3.png"),
     ];
   }
   return [main];

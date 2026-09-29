@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { SparkleIcon } from "../../components/icons";
+import { asset } from "../../lib/utils";
 
 /** Hero section — 1440×663, bg #f2f0f1, headline + stats + model photo. */
 export function Hero() {
@@ -15,7 +16,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1440px]">
         <div className="absolute inset-0 hidden overflow-hidden md:block" aria-hidden="true">
           <img
-            src="/assets/hero.jpg"
+            src={asset("assets/hero.jpg")}
             alt=""
             fetchPriority="high"
             className="absolute top-[-7%] left-[49.6%] h-[152%] w-[46.7%] max-w-none object-cover"
@@ -24,7 +25,7 @@ export function Hero() {
 
         <div className="relative px-4 pt-16 pb-12 md:px-[100px] md:pt-[103px] md:pb-[116px]">
           <img
-            src="/assets/hero.jpg"
+            src={asset("assets/hero.jpg")}
             alt="Models wearing SHOP.CO clothing"
             className="mb-8 aspect-[4/5] w-full rounded-[20px] object-cover object-top md:hidden"
           />

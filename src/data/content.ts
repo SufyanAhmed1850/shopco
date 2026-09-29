@@ -1,5 +1,7 @@
 /** Static content transcribed from the Figma design. */
 
+import { asset } from "../lib/utils";
+
 export interface Review {
   name: string;
   rating: number;
@@ -96,10 +98,10 @@ export interface DressStyle {
 }
 
 export const dressStyles: DressStyle[] = [
-  { label: "Casual", slug: "casual", image: "/assets/style/casual.png", span: "wide" },
-  { label: "Formal", slug: "formal", image: "/assets/style/formal.png", span: "tall" },
-  { label: "Party", slug: "party", image: "/assets/style/party.png", span: "tall" },
-  { label: "Gym", slug: "gym", image: "/assets/style/gym.png", span: "wide" },
+  { label: "Casual", slug: "casual", image: asset("assets/style/casual.png"), span: "wide" },
+  { label: "Formal", slug: "formal", image: asset("assets/style/formal.png"), span: "tall" },
+  { label: "Party", slug: "party", image: asset("assets/style/party.png"), span: "tall" },
+  { label: "Gym", slug: "gym", image: asset("assets/style/gym.png"), span: "wide" },
 ];
 
 export const footerColumns: Array<{ title: string; links: string[] }> = [

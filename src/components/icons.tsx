@@ -1,5 +1,7 @@
 /** Inline SVG icons matching the Figma design. */
 
+import { asset } from "../lib/utils";
+
 /** Gold rating star with fractional fill support. */
 export function StarIcon({
   fill = 1,
@@ -101,11 +103,11 @@ export function GithubIcon({ className }: { className?: string }) {
   );
 }
 export function ZaraLogo({ className = "" }: { className?: string }) {
-  return <img src="/assets/zara.svg" alt="Zara" className={className} />;
+  return <img src={asset("assets/zara.svg")} alt="Zara" className={className} />;
 }
 
 export function GucciLogo({ className = "" }: { className?: string }) {
-  return <img src="/assets/gucci.svg" alt="Gucci" className={className} />;
+  return <img src={asset("assets/gucci.svg")} alt="Gucci" className={className} />;
 }
 
 export function VersaceLogo({ className = "" }: { className?: string }) {
