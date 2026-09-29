@@ -43,7 +43,7 @@ export function Hero() {
             <Button className="w-[210px]">Shop Now</Button>
           </Link>
 
-          <dl className="mt-12 flex max-w-[596px] flex-wrap items-center gap-x-8 gap-y-6 md:mt-[52px]">
+          <dl className="mt-12 flex max-w-[596px] flex-wrap items-center gap-x-8 gap-y-6 md:mt-[52px] md:flex-nowrap">
             {stats.map(([value, label], i) => (
               <div
                 key={label}
