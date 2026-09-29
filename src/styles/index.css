@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Integral CF", "Satoshi", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-surface: #f0eeed; /* product card background */
+  --color-surface-2: #f0f0f0; /* dress-style card background */
+  --color-hero: #f2f0f1; /* hero background */
+  --color-sale: #ff3333; /* discount red */
+  --color-star: #ffc633; /* rating stars */
+  --color-muted: #666666;
+  --color-faint: #999999;
+  --color-line: rgba(0, 0, 0, 0.1);
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+/* thin elegant scrollbar for horizontal rails */
+.rail-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rail-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* range slider (price filter) */
+input[type="range"].price-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #000 var(--fill, 50%), #e5e5e5 var(--fill, 50%));
+  outline: none;
+}
+input[type="range"].price-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #000;
+  cursor: pointer;
+  border: none;
+}
+input[type="range"].price-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #000;
+  cursor: pointer;
+  border: none;
+}
